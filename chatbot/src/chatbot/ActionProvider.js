@@ -6,20 +6,49 @@ class ActionProvider {
 
 
   greet = () => {
-    const message = this.createChatBotMessage("Hello friend.");
+    const message = this.createChatBotMessage("¡Hola! Bienvenido a nuestra ferretería.");
+    this.addMessageToState(message);
+  };
+  dom = () => {
+    const message = this.createChatBotMessage("Nuestro domicilio es: calle jacaranda #40, Tepic, Nay.");
+    this.addMessageToState(message);
+  };
+  err = () => {
+    const message = this.createChatBotMessage("Disculpa, no he logrado entenderte.");
     this.addMessageToState(message);
   };
 
   handleJavascriptQuiz = () => {
     const message = this.createChatBotMessage(
-      "Fantastic. Here is your quiz. Good luck!",
+      "Excelente. Nuestros horarios son los siguientes.",
       {
-        widget: "javascriptQuiz",
+        widget: "horario",
       }
     );
 
     this.addMessageToState(message);
   };
+  handleJavascriptProducts = () => {
+    const message = this.createChatBotMessage(
+      "Excelente. Nuestro catalogo es el siguiente.",
+      {
+        widget: "productos",
+      }
+    );
+
+    this.addMessageToState(message);
+  };
+  handleJavascriptOfer = () => {
+    const message = this.createChatBotMessage(
+      "Excelente. Nuestras ofertas son las siguientes.",
+      {
+        widget: "ofertas",
+      }
+    );
+
+    this.addMessageToState(message);
+  };
+  
   
   addMessageToState = (message) => {
     this.setState((prevState) => ({

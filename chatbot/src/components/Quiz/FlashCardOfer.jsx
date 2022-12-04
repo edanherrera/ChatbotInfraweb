@@ -18,33 +18,12 @@ const FlashCard = ({ question, answer, incrementIndex }) => {
       </div>
       {showAnswer && (
         <button onClick={incrementIndex} className="flashcard-button">
-          Siguiente Horario.
+          Siguiente oferta.
         </button>
       )}
     </>
   );
 };
-const FlashCard1 = ({ question, answer, incrementIndex }) => {
-  const [showAnswer, setShowAnswer] = useState(false);
 
-  useEffect(() => setShowAnswer(false), [question]);
-
-  return (
-    <>
-      <div
-        className="flashcard-container"
-        onClick={() => setShowAnswer(!showAnswer)}
-      >
-        {!showAnswer && question}
-        {showAnswer && answer}
-      </div>
-      {showAnswer && (
-        <button onClick={incrementIndex} className="flashcard-button">
-          Producto siguiente.
-        </button>
-      )}
-    </>
-  );
-};
 
 export default FlashCard;
